@@ -5,7 +5,7 @@ if [ ! -f "pyproject.toml" ]; then
     exit 0
 fi
 
-repo="https://github.com/karned-rekipe/arclith.git"
+repo="https://github.com/karned-agency/arclith.git"
 ref="${ARCLITH_FRAMEWORK_REF:-${GITHUB_HEAD_REF:-main}}"
 
 if [ "$ref" != "main" ] && ! git ls-remote --exit-code --heads "$repo" "$ref" >/dev/null 2>&1; then

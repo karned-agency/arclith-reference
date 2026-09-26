@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "arclith-sample"
 version = "0.2.0"
-description = "Functional sample CRUD built on Arclith"
+description = "Reference implementation and integration laboratory for Arclith"
 requires-python = ">=3.13,<3.14"
 dependencies = [
     "arclith[mongodb,fastapi,mcp,duckdb]>=0.11.0",

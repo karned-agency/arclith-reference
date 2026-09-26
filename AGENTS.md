@@ -1,9 +1,11 @@
-# AGENTS.md — Arclith sample (`_sample/`)
+# AGENTS.md — Arclith reference (`arclith-reference/`)
 
 ## Contexte global
 
-`_sample/` est le bac à sable R&D d'Arclith. Il sert à tester et faire évoluer `arclith` avant toute publication sur
-PyPI. Il implémente un CRUD `Ingredient` minimal pour valider les primitives du framework. **Ne jamais déployer.**
+`arclith-reference` est l'implémentation de référence et le bac à sable R&D
+d'Arclith. Il sert à tester et faire évoluer `arclith` avant toute publication
+sur PyPI. Il implémente un CRUD `Ingredient` minimal pour valider les primitives
+du framework. **Ne jamais déployer.**
 
 ## Rôle
 
