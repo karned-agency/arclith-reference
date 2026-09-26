@@ -1,4 +1,4 @@
-# Arclith Sample
+# Arclith Reference
 
 Implémentation fonctionnelle minimale d'Arclith pour tester le framework en conditions réelles.
 
@@ -8,10 +8,11 @@ Quickstart demo: [QUICKSTART.md](QUICKSTART.md)
 
 ## Project Links
 
-- Framework: [karned-rekipe/arclith](https://github.com/karned-rekipe/arclith)
-- Sample repository: [karned-rekipe/_sample](https://github.com/karned-rekipe/_sample)
-- GitHub Project: [Arclith backlog](https://github.com/orgs/karned-rekipe/projects/5)
-- Framework issues: [Arclith issues](https://github.com/karned-rekipe/arclith/issues)
+- Framework: [karned-agency/arclith](https://github.com/karned-agency/arclith)
+- Reference implementation: [karned-agency/arclith-reference](https://github.com/karned-agency/arclith-reference)
+- Documentation: [arclith.karned.bzh](https://arclith.karned.bzh/)
+- GitHub Project: [Arclith backlog](https://github.com/orgs/karned-agency/projects/9)
+- Framework issues: [Arclith issues](https://github.com/karned-agency/arclith/issues)
 
 ## Architecture
 
@@ -35,7 +36,7 @@ Quickstart demo: [QUICKSTART.md](QUICKSTART.md)
 if [ -f uv.lock ]; then uv sync --frozen; else uv sync; fi
 ```
 
-Cette commande garde le clone `_sample` reproductible avec `uv.lock`, tout en creant le lockfile quand le projet vient d'etre genere par `arclith-cli`.
+Cette commande garde le clone `arclith-reference` reproductible avec `uv.lock`, tout en créant le lockfile quand le projet vient d'être généré par `arclith-cli`.
 
 Pour le parcours de demo sans dependance externe:
 

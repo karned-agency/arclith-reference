@@ -1,10 +1,10 @@
-# Quickstart demo Arclith sample
+# Quickstart Arclith Reference
 
-Ce guide lance `_sample` comme banc de test concret pour les evolutions Arclith. Le parcours par defaut utilise l'adapter `memory`, sans MongoDB ni Keycloak, afin de valider vite le coeur hexagonal, l'API, MCP et les probes.
+Ce guide lance `arclith-reference` comme banc de test concret pour les évolutions Arclith. Le parcours par défaut utilise l'adapter `memory`, sans MongoDB ni Keycloak, afin de valider vite le cœur hexagonal, l'API, MCP et les probes.
 
 ## Objectif
 
-`_sample` doit rester l'implementation fonctionnelle de reference:
+`arclith-reference` doit rester l'implémentation fonctionnelle de référence :
 
 - un domaine `Ingredient` independant des frameworks;
 - un port repository et plusieurs adapters outbound (`memory`, `mongodb`, `duckdb`);
@@ -21,12 +21,12 @@ Ce guide lance `_sample` comme banc de test concret pour les evolutions Arclith.
 ## 1. Installer
 
 ```bash
-git clone https://github.com/karned-rekipe/_sample.git
-cd _sample
+git clone https://github.com/karned-agency/arclith-reference.git
+cd arclith-reference
 if [ -f uv.lock ]; then uv sync --frozen; else uv sync; fi
 ```
 
-Le clone `_sample` utilise `uv.lock` avec `--frozen`.
+Le clone `arclith-reference` utilise `uv.lock` avec `--frozen`.
 Un projet genere par `arclith-cli` n'a pas encore de lockfile; le premier `uv sync` le cree.
 
 ## 2. Lancer le sample
@@ -168,4 +168,4 @@ Terminal 2:
 make demo-smoke
 ```
 
-La regle de fond: si Arclith change, `_sample` doit continuer a demontrer que le domaine reste independant des adapters et que les transports API/MCP appellent les memes cas d'usage.
+La règle de fond : si Arclith change, `arclith-reference` doit continuer à démontrer que le domaine reste indépendant des adapters et que les transports API/MCP appellent les mêmes cas d'usage.

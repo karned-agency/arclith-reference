@@ -1,8 +1,9 @@
-# Dev Mode Editable — _sample
+# Dev Mode Editable — arclith-reference
 
 ## Quand utiliser
 
-Vous êtes en train de développer **simultanément** sur `framework/` et `_sample/`, et vous voulez tester vos changements locaux avant publication PyPI.
+Vous développez **simultanément** dans `arclith/` et `arclith-reference/` et
+vous voulez tester les changements locaux avant leur publication sur PyPI.
 
 ## ⚠️ Règles absolues
 
@@ -15,7 +16,7 @@ Vous êtes en train de développer **simultanément** sur `framework/` et `_samp
 ### Étape 1 — Checkout une branche locale
 
 ```bash
-cd /Users/killian/Karned/repos/Rekipe/_sample
+cd /path/to/workspace/arclith-reference
 git checkout -b dev/my-feature
 ```
 
@@ -27,7 +28,7 @@ git checkout -b dev/my-feature
 # ...existing dependencies...
 
 [tool.uv.sources]
-arclith = { path = "../framework", editable = true }
+arclith = { path = "../arclith", editable = true }
 ```
 
 ### Étape 3 — Synchroniser les dépendances
@@ -36,7 +37,9 @@ arclith = { path = "../framework", editable = true }
 uv sync
 ```
 
-Arclith sera maintenant résolu depuis `/Users/killian/Karned/repos/Rekipe/framework` en mode editable — tout changement dans `framework/arclith/` est immédiatement visible dans `_sample` sans réinstallation.
+Arclith est maintenant résolu depuis le clone frère `../arclith` en mode
+editable : tout changement du framework est immédiatement visible dans
+`arclith-reference` sans réinstallation.
 
 ### Étape 4 — Tester vos changements
 
@@ -95,22 +98,22 @@ git stash drop  # supprimer le stash une fois confirmé
 ### Tester une nouvelle primitive de framework
 
 ```bash
-# Terminal 1 — éditer framework
-cd /Users/killian/Karned/repos/Rekipe/framework
+# Terminal 1 — éditer le framework
+cd /path/to/workspace/arclith
 # ... éditer arclith/domain/models/entity.py ...
 
-# Terminal 2 — tester dans _sample (avec editable = true)
-cd /Users/killian/Karned/repos/Rekipe/_sample
+# Terminal 2 — tester dans arclith-reference (avec editable = true)
+cd /path/to/workspace/arclith-reference
 uv run pytest tests/units/domain/test_models.py -v
-# Les changements dans framework/ sont immédiatement visibles
+# Les changements dans arclith/ sont immédiatement visibles
 ```
 
 ### Valider un adaptateur avant publication
 
 ```bash
-# 1. Implémenter le nouvel adapter dans framework/arclith/adapters/output/newdb/
-# 2. Activer [tool.uv.sources] editable dans _sample
-# 3. Utiliser le nouvel adapter dans _sample/config/adapters/output/newdb.yaml
+# 1. Implémenter le nouvel adapter dans arclith/arclith/adapters/outbound/newdb/
+# 2. Activer [tool.uv.sources] editable dans arclith-reference
+# 3. Utiliser le nouvel adapter dans arclith-reference/config/adapters/outbound/newdb.yaml
 # 4. Tester : uv run python main.py
 # 5. Une fois validé, désactiver [tool.uv.sources] avant merge
 ```
@@ -136,4 +139,3 @@ grep "tool.uv.sources" pyproject.toml
 
 **Skill version** : 1.0.0  
 **Dernière révision** : 2026-03-30
-

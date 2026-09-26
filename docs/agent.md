@@ -39,7 +39,7 @@ agent:
 ## Terminal 1 — MCP server
 
 ```bash
-cd _sample
+cd arclith-reference
 MODE=mcp_http uv run python main.py
 ```
 
@@ -48,7 +48,7 @@ MODE=mcp_http uv run python main.py
 ## Terminal 2 — Agent Chainlit
 
 ```bash
-cd _sample
+cd arclith-reference
 uv run chainlit run main_agent.py --port 8002
 ```
 

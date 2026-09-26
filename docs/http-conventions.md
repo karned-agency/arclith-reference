@@ -227,7 +227,7 @@ Identique à POST Create (201, Location, Link, UUID seul, Prefer header support)
 - Validation Pydantic → **422**
 - Exceptions levées → configurable
 
-**Convention _sample :**
+**Convention `arclith-reference` :**
 
 ```python
 responses = {
